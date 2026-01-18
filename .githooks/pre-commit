@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+echo "Running workspace lint..."
+npm run lint --silent
+
+echo "Running lint-staged checks..."
+npx lint-staged
+
+echo "Running fast typecheck (tsc --noEmit)..."
+npx tsc --noEmit
